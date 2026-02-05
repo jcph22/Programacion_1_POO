@@ -1,5 +1,5 @@
 package Programacion_1_POO.Primer_Corte;
-
+ 
 import Programacion_1_POO.Utilidades.Reutilizacion;
 
 public class EjercicioArreglos {
@@ -7,22 +7,26 @@ public class EjercicioArreglos {
     int cantidad = Reutilizacion.ingresarEntero("Ingresa el tamaño del arreglo: ");
     int [] arreglo = Reutilizacion.ingresarArregloEntero("Ingresa el número", cantidad);
     imprimirArreglo(arreglo);
-    int [] arreglo2 = eliminarNumeroArreglo(arreglo);
+    int [] arreglo2 = reemplazarNumeroArreglo(arreglo);
     imprimirArreglo(arreglo2);
     buscarElemento(arreglo2);
     identificarNumeroMasRepetido(arreglo2);
     validarNumerosPerfectos(arreglo2);
+    int [] arreglo3 = eliminarElementoArreglo(arreglo2);
+    imprimirArreglo(arreglo3);
     }
     public static void imprimirArreglo(int [] datos){
+        System.out.print("Este es el arreglo: \n[ ");
         for (int dato:datos){
-            System.out.println(dato);
+            System.out.print(dato+" ");
         }
+        System.out.print("]\n");
     }
-    public static int [] eliminarNumeroArreglo(int [] datos){
-                int posicion = Reutilizacion.ingresarEntero("Ingresa la posición que quieres reemplazar:");
+    public static int [] reemplazarNumeroArreglo(int [] datos){
+        int posicion = Reutilizacion.ingresarEntero("Ingresa la posición que quieres reemplazar (0-"+(datos.length-1)+"):");
         if (posicion<0||posicion>=datos.length){
             Reutilizacion.mostrarMensaje("Ingrese un valor entre 0 y "+(datos.length-1));
-            posicion = Reutilizacion.ingresarEntero("Ingresa la posición que quieres reemplazar:");
+            posicion = Reutilizacion.ingresarEntero("Ingresa la posición que quieres reemplazar (0-"+(datos.length-1)+":");
         }
         datos [posicion] = Reutilizacion.ingresarEntero("ingresa el valor por el que deseas reemplazarlo: ");
         return datos;
@@ -117,6 +121,22 @@ public class EjercicioArreglos {
             System.out.println("No hay números perfectos en el arreglo.");
         }
 
+    }
+    public static int [] eliminarElementoArreglo(int [] datos){
+        int [] arreglo = new int [datos.length-1];
+        int posicion = Reutilizacion.ingresarEntero("Ingresa la posición que quieres eliminar (0-"+(datos.length-1)+"):");
+        while (posicion<0||posicion>datos.length-1){
+            Reutilizacion.mostrarMensaje("Error, ingrese un valor entre 0 y "+(datos.length-1)+".");
+            posicion = Reutilizacion.ingresarEntero("Ingresa la posición que quieres reemplazar (0-"+(datos.length-1)+"):");
+        }
+        int k=0;
+        for (int i=0;i<datos.length;i++){
+            if (i!=posicion){
+                arreglo[k]=datos[i];
+                k++;
+            }
+        }
+        return arreglo;        
     }
     
 }
