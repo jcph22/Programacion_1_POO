@@ -10,8 +10,6 @@ import java.util.Scanner;
 
 public class Reutilizacion {
     private static final Scanner scanner = new Scanner(System.in);
-    public static void main(String[] args) {
-    }
     
     public static void mostrarMensaje(String mensaje){
         System.out.println(mensaje);
