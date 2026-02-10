@@ -22,19 +22,27 @@ public class Reutilizacion {
     }
     public static double ingresarDecimal(String mensaje){
         System.out.print(mensaje);
-        return scanner.nextDouble();
+        double valor = scanner.nextDouble();
+        scanner.nextLine(); // <-- LIMPIEZA: consume el \n sobrante
+        return valor;
     }
     public static int ingresarEntero(String mensaje){
         System.out.print(mensaje);
-        return scanner.nextInt();
+        int valor = scanner.nextInt();
+        scanner.nextLine(); // <-- LIMPIEZA: consume el \n sobrante
+        return valor;
     }
     public static boolean ingresarBooleano(String mensaje) {
         System.out.print(mensaje);
-        return scanner.nextBoolean();
+        boolean valor = scanner.nextBoolean();
+        scanner.nextLine(); // <-- LIMPIEZA
+        return valor;
       }
     public static char ingresarChar(String mensaje){
         System.out.print(mensaje);
-        return scanner.next().charAt(0);
+        char c = scanner.next().charAt(0);
+        scanner.nextLine(); // <-- LIMPIEZA
+        return c;
     }
     public static boolean validarVocal(char letra){
         boolean esVocal=false;
