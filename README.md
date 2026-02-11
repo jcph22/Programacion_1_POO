@@ -8,7 +8,7 @@
 
 | Corte | Proyecto | Descripción | Link |
 | :---- | :------- | :---------- | :--- |
-| **1°** | **Gestión de Notas** | Manejo de arreglos decimales, validación de errores y Javadoc. | [Ver Código](./Programacion_1_POO/Entregas/Arreglos.java) |
+| **1°** | **Gestión de Notas** | Manejo de arreglos decimales, validación de errores y Javadoc. | [Ver Código](./Entregas/Arreglos.java) |
 
 ---
 
