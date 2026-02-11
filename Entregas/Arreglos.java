@@ -1,3 +1,11 @@
+/**
+ * PROGRAM: This program interacts with the user and allows them to manage an array of notes.
+ * @author Juan Carlos Polania Hincapie
+ * @version 1.0
+ * Date: February 11/2026
+ * License: GNU-GPL v3
+*/
+
 package Programacion_1_POO.Entregas;
 
 import javax.swing.JOptionPane;
@@ -9,7 +17,7 @@ public class Arreglos {
         notas = reemplazarNotas(notas);
         double promedio = calcularPromedio(notas);
         double notaMayor = calcularNotaMayor(notas);
-        double notaMenor = calctularNotaMenor(notas);
+        double notaMenor = calcularNotaMenor(notas);
         ordenarNotas(notas);
         mostrarResumen(notas, promedio, notaMayor, notaMenor);
     }
@@ -38,7 +46,7 @@ public class Arreglos {
         }        
         return mayor;
     }    
-    public static double calctularNotaMenor(double [] notas){
+    public static double calcularNotaMenor(double [] notas){
         double menor = notas[0];
         for (double nota:notas){
             if (nota<menor){
