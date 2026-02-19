@@ -21,6 +21,10 @@ public class Arreglos {
         ordenarNotas(notas);
         mostrarResumen(notas, promedio, notaMayor, notaMenor);
     }
+    /**
+     * Method that allows the user to enter an array of notes
+     * @return
+     */
     public static double [] ingresarArregloDecimal(){        
         int cantidad = leerEntero("Ingresa la cantidad de notas: ");        
         double [] notas = new double [cantidad];        
@@ -30,6 +34,11 @@ public class Arreglos {
         return notas;
         
     }
+    /**
+     * Method that allows the user to calculate the average.
+     * @param notas
+     * @return
+     */
     public static double calcularPromedio(double [] notas){
         double acum = 0;
         for (double nota:notas){
@@ -37,6 +46,11 @@ public class Arreglos {
         }        
         return acum/notas.length;
     }
+    /**
+     * Method that allows the user to calculate the highest note.
+     * @param notas
+     * @return
+     */
     public static double calcularNotaMayor(double [] notas){
         double mayor = 0;
         for (double nota:notas){
@@ -45,7 +59,12 @@ public class Arreglos {
             }            
         }        
         return mayor;
-    }    
+    } 
+    /**
+     * Method that allows the user to calculate the lowest note.
+     * @param notas
+     * @return
+     */   
     public static double calcularNotaMenor(double [] notas){
         double menor = notas[0];
         for (double nota:notas){
@@ -55,6 +74,11 @@ public class Arreglos {
         }        
         return menor;
     }
+    /**
+     * Method that allows the user to order an array of notes.
+     * @param notas
+     * @return
+     */
     public static double [] ordenarNotas(double [] notas){
         for (int i=0;i<notas.length-1;i++){
             for (int j=i+1;j<notas.length;j++){
@@ -67,6 +91,11 @@ public class Arreglos {
         }
         return notas;
     }
+    /**
+     * Method that allows the user to replace a note.
+     * @param notas
+     * @return
+     */
     public static double [] reemplazarNotas(double [] notas){
         while (true){
             String resumen = "Notas registradas: \n[ ";
@@ -86,6 +115,13 @@ public class Arreglos {
         }
         return notas;
     }
+    /**
+     * Method that allows the user to show a resume of the notes.
+     * @param notas
+     * @param promedio
+     * @param notaMayor
+     * @param notaMenor
+     */
     public static void mostrarResumen(double [] notas, double promedio, double notaMayor, double notaMenor){
         String resumen = "=== RESUMEN DE CALIFICACIONES ===\n\n";
         resumen += "Notas registradas: \n";
@@ -99,6 +135,10 @@ public class Arreglos {
         resumen += "\n--------------------------------\n";
         JOptionPane.showMessageDialog(null, resumen);
     }
+    /**
+     * Method that allows the user to show array of notes.
+     * @param notas
+     */
     public static void mostrarNotas(double [] notas){
         String resumen = "=== NOTAS REGISTRADAS ===\n\n";
         for (int i=0;i<notas.length;i++){
@@ -107,6 +147,11 @@ public class Arreglos {
         resumen += "\n--------------------------------\n";
         JOptionPane.showMessageDialog(null, resumen);
     }
+    /**
+     * Method that allows the user to enter an integer.
+     * @param mensaje
+     * @return
+     */
     public static int leerEntero(String mensaje){
         while(true){
             String lectura = JOptionPane.showInputDialog(null, mensaje);
@@ -121,6 +166,11 @@ public class Arreglos {
             }
         }
     }
+    /**
+     * Method that allows the user to enter double.
+     * @param mensaje
+     * @return
+     */
     public static double leerDecimal(String mensaje){
         while(true){
             String lectura = JOptionPane.showInputDialog(null, mensaje);
